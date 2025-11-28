@@ -1,0 +1,60 @@
+package LOLO;
+
+import java.util.Scanner;
+
+public class Chessboard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+        Scanner scan = new Scanner(System.in);                    //creating scanner object
+		
+		final int boardsize= 10;                                  //initializing unchangeable size of board
+		char[][] board = new char[boardsize][boardsize];          //creating mutidimentional array
+		
+		
+		
+		for(int row = 0 ; row<boardsize ; row++)                  //initializing the entire board with dots
+		{
+			for(int col = 0 ; col<boardsize ; col++)
+			{
+				board[row][col] = '.';
+			}
+			
+		}
+		
+		System.out.println("Please enter columns"                 //asking input
+				+ " to put queen : "); 
+		
+		for(int row=0; row<boardsize; row++)                      //loop to read 10 column positions,
+		{
+			int column = scan.nextInt(); scan.nextLine();         //one for each row
+		
+			
+		if(column >= 0 && column<boardsize)                       //placing the Q in the correct cell
+		{
+			board[row][column] = 'Q';
+		}
+			if(row<boardsize - 1) {
+				
+				System.out.println("Please enter columns"         //asking input
+						+ " to put queen : ");
+				
+			}
+		}
+		
+		for( int row = 0 ;row < boardsize; row++)                 //displaying the final chessboard
+		{
+			for(int col= 0; col< boardsize; col ++)               //placing characters (.,Q)
+			{
+				System.out.print(board[row][col] +" ");
+			}
+			
+			System.out.println();
+				 
+       
+	}
+
+	}
+
+}
